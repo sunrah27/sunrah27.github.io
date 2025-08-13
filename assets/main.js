@@ -158,6 +158,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==============================
+    // BURGER MENU TOGGLE
+    // ==============================
+    const burger = document.querySelector('.burger-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (burger && mobileMenu) {
+        burger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            burger.setAttribute('aria-expanded', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen);
+        });
+
+        // Close menu on link click inside mobile menu
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                burger.setAttribute('aria-expanded', false);
+                mobileMenu.setAttribute('aria-hidden', true);
+            });
+        });
+    }
 });
 
 function initSideNavIndicator() {

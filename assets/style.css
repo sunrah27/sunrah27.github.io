@@ -8,6 +8,7 @@
     --shadow-light: rgba(255 255 255 / 0.8);
     --shadow-dark: rgba(0 0 0 / 0.12);
     --accent: #4a90e2;
+    --gap: 24px;
 }
 
 * {
@@ -66,18 +67,19 @@ h3 {
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1em;
 }
 
 li {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.9rem;
 }
 
 a {
     color: var(--accent);
+    font-size: 1rem;
     text-decoration: none;
     font-weight: 600;
 }
@@ -91,7 +93,7 @@ a:focus {
 .wavy-background {
     position: fixed;
     top: 0;
-    left: 0px;
+    left: 0;
     width: 100%;
     height: 100vh;
     pointer-events: none;
@@ -133,7 +135,7 @@ section {
 .side-nav {
     position: fixed;
     top: 50%;
-    left: 20px;
+    left: 24px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -157,10 +159,6 @@ section {
     padding: 0;
     margin: 0;
 }
-
-/* .side-nav ul li {
-    padding-left: 10px;
-} */
 
 .side-nav .nav-link {
     font-family: 'Playfair Display', serif;
@@ -210,7 +208,7 @@ section {
 
 .service-card {
     max-width: 480px;
-    padding: 3rem 3rem;
+    padding: 3rem;
 }
 
 /*==================================================
@@ -229,6 +227,7 @@ section {
 
 .why-text {
     max-width: 500px;
+    margin-top: 24px;
 }
 
 .why-stats {
@@ -236,6 +235,9 @@ section {
     max-width: 500px;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .stat-card {
@@ -416,7 +418,6 @@ button[type="submit"]:hover {
     width: 15px;
     height: 15px;
     background: var(--shadow-dark);
-    /* border-radius: 50%; */
     margin: 0 15px;
     cursor: pointer;
     box-shadow:
@@ -433,8 +434,608 @@ button[type="submit"]:hover {
     background-color: var(--accent);
 }
 
-/* @media (max-width: 600px) {
-    .wavy-background {
+@media (max-width: 1920px) {
+
+    /*==============================
+            TYPOGRAPHY
+    ==============================*/
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 1rem;
+    }
+
+    /*==============================
+            SERVICES SECTION
+    ==============================*/
+    .services-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    /*==============================
+            WHY SECTION
+    ==============================*/
+    .why-stats {
+        gap: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 3rem 2rem;
+    }
+
+    /*==============================
+            WORK SECTION
+    ==============================*/
+    .work-card {
+        max-height: 275px;
+    }
+
+    .work-text {
+        padding: 3rem;
+    }
+
+    .work-image {
+        width: 150px;
+        height: auto;
+    }
+
+    /*==============================
+            CAROUSEL SECTION
+    ==============================*/
+    .carousel-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1536px) {
+
+    /*==============================
+            SERVICES SECTION
+    ==============================*/
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card ul li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 1366px) {
+
+    /*==============================
+            TYPOGRAPHY
+    ==============================*/
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 1rem;
+    }
+
+    /*==============================
+            LAYOUT
+    ==============================*/
+    .panel {
+        gap: 16px;
+    }
+
+    /*==============================
+            SERVICES SECTION
+    ==============================*/
+    .services-section .section-title,
+    .services-section .section-subtitle {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .services-layout {
+        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    /*==============================
+            WHY SECTION
+    ==============================*/
+    .why-layout {
+        gap: 16px;
+    }
+
+    .why-stats {
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .why-text {
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    .stat-card {
+        width: 100%;
+        height: 100%;
+        padding: 3rem 2rem;
+    }
+
+    /*==============================
+            WORK SECTION
+    ==============================*/
+    .work-card {
+        max-height: 275px;
+    }
+
+    .work-text {
+        padding: 2rem;
+    }
+
+    .work-image {
+        width: 150px;
+        height: auto;
+    }
+
+    /*==============================
+            CAROUSEL SECTION
+    ==============================*/
+    .carousel-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    /*==============================
+            TYPOGRAPHY
+    ==============================*/
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 0.8rem;
+    }
+
+    /*==============================
+            LAYOUT
+    ==============================*/
+    .panel {
+        gap: 8px;
+    }
+
+    /*==============================
+            SERVICES SECTION
+    ==============================*/
+    .services-section .section-title,
+    .services-section .section-subtitle {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .services-layout {
+        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        padding: 1.5rem;
+        max-width: 350px;
+    }
+
+    .service-card ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    /*==============================
+            WHY SECTION
+    ==============================*/
+    .why-layout {
+        gap: 16px;
+    }
+
+    .why-stats {
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .why-text {
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    .stat-card {
+        width: 100%;
+        height: 100%;
+        padding: 3rem 2rem;
+    }
+
+    /*==============================
+            WORK SECTION
+    ==============================*/
+    .work-card {
+        max-height: 275px;
+    }
+
+    .work-text {
+        padding: 2rem;
+    }
+
+    .work-image {
+        width: 150px;
+        height: auto;
+    }
+
+    /*==============================
+            CAROUSEL SECTION
+    ==============================*/
+    .carousel-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /*==============================
+            TYPOGRAPHY
+    ==============================*/
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 0.8rem;
+    }
+
+    /*==============================
+            LAYOUT
+    ==============================*/
+
+    .panel {
+        gap: 8px;
+    }
+
+    /*==============================
+            NAVIGATION 
+    ==============================*/
+
+    .side-nav {
         display: none;
     }
-} */
+
+    .burger-menu {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        width: 48px;
+        height: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 20;
+        background: white;
+        padding: 8px;
+        border-radius: 4px;
+        border: none;
+        box-shadow:
+            -8px -8px 10px rgba(240, 240, 240, 0.8),
+            4px 4px 10px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .burger-menu span {
+        display: block;
+        height: 3px;
+        background-color: var(--primary-text);
+    }
+
+    /* Fullscreen mobile menu overlay */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--card-bg);
+        z-index: 15;
+        overflow: hidden;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .menu-bg {
+        position: absolute;
+        top: 0;
+        width: 33.3333vw;
+        height: 100vh;
+        background: var(--accent);
+        z-index: 10;
+    }
+
+    /* Position columns */
+    .col1 {
+        left: 0;
+        transform: translateY(100%);
+        animation: slideUpFromBottom 0.5s forwards;
+    }
+
+    .col2 {
+        left: 33.3333vw;
+        transform: translateY(-100%);
+        animation: slideDownFromTop 0.5s forwards;
+        animation-delay: 0.2s;
+    }
+
+    .col3 {
+        left: 66.6666vw;
+        transform: translateY(100%);
+        animation: slideUpFromBottom 0.5s forwards;
+        animation-delay: 0.4s;
+    }
+
+    /* Animations */
+    @keyframes slideUpFromBottom {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideDownFromTop {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Show nav links after background */
+    .mobile-nav-links {
+        position: relative;
+        z-index: 20;
+        list-style: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    .mobile-nav-links a {
+        font-family: 'Playfair Display', serif;
+        color: var(--primary-text);
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin: 1rem 0;
+        display: block;
+        z-index: 20;
+        opacity: 0;
+        animation: fadeInMenu 0.5s forwards;
+        animation-delay: 0.7s;
+        letter-spacing: 3px;
+    }
+
+    .mobile-nav-links a:focus,
+    .mobile-nav-links a:hover {
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+    }
+
+    @keyframes fadeInMenu {
+        to {
+            opacity: 1;
+        }
+    }
+
+    .burger-menu[aria-expanded="true"] {
+        box-shadow:
+            -8px -8px 10px rgba(240, 240, 240, 0.2),
+            4px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /*==============================
+            SERVICES SECTION
+    ==============================*/
+    .services-section .section-title,
+    .services-section .section-subtitle {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .services-layout {
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        padding: 1.2rem;
+        max-width: 290px;
+    }
+
+    .service-card ul {
+        margin: 8px 0;
+        padding-left: 20px;
+    }
+
+    .service-card ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    /*==============================
+            WHY SECTION
+    ==============================*/
+
+    .why-layout {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .why-stats {
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .why-text {
+        max-width: 500px;
+        margin-top: 0;
+    }
+
+    .stat-card {
+        width: 100%;
+        height: 100%;
+        padding: 3rem 2rem;
+    }
+
+    /*==============================
+            WORK SECTION
+    ==============================*/
+    .work-card {
+        max-height: 250px;
+    }
+
+    .work-text {
+        padding: 2rem;
+        max-width: 350px;
+    }
+
+    .work-image {
+        width: 150px;
+        height: auto;
+    }
+
+    /*==============================
+            CONTACT SECTION
+    ==============================*/
+
+    .contact-card {
+        padding: 2rem;
+        max-width: 450px;
+    }
+
+    button[type="submit"] {
+        border-radius: 8px;
+        box-shadow: 2px 2px 3px #2c6cc1,
+            -2px -2px 3px #6ba1ff;
+    }
+
+    /*==============================
+            CAROUSEL SECTION
+    ==============================*/
+    .carousel-item {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* DISABLE scroll snapping */
+    html,
+    body,
+    .scroll-container {
+        scroll-snap-type: none !important;
+        overflow-y: auto;
+        /* allow normal scrolling */
+    }
+
+    section {
+        scroll-snap-align: none !important;
+        padding: 1rem;
+    }
+
+    .services-layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .service-card {
+        max-width: 350px;
+        padding: 1rem;
+    }
+
+    .work-image {
+        display: none;
+    }
+}
+
+/* Mobile large */
+@media (max-width: 480px) {
+    /* Adjust typography, navigation, form inputs */
+}
+
+/* Mobile standard */
+@media (max-width: 375px) {
+    /* Tighten layout, smaller font sizes, button sizes */
+}
+
+/* Mobile small */
+@media (max-width: 320px) {
+    /* Optimize for very small screens */
+}

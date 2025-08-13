@@ -37,11 +37,29 @@
 </head>
 
 <body>
-
     <nav class="side-nav" aria-label="Section navigation">
         <div class="indicator"></div>
         <ul>
-            <li><a href="#hero" class="nav-link active">Hero</a></li>
+            <li><a href="#hero" class="nav-link active">Pixel Tank</a></li>
+            <li><a href="#services" class="nav-link">Our Services</a></li>
+            <li><a href="#why" class="nav-link">Why Choose Us</a></li>
+            <li><a href="#work" class="nav-link">Our Work</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <button class="burger-menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="menu-bg col1"></div>
+        <div class="menu-bg col2"></div>
+        <div class="menu-bg col3"></div>
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" class="nav-link active">Pixel Tank</a></li>
             <li><a href="#services" class="nav-link">Our Services</a></li>
             <li><a href="#why" class="nav-link">Why Choose Us</a></li>
             <li><a href="#work" class="nav-link">Our Work</a></li>
@@ -195,14 +213,16 @@
         <section id="contact" class="panel contact-section">
             <h2 class="section-title">Contact Us</h2>
             <div class="contact-card">
-                <form id="contact-form" action="https://formspree.io/f/mwpqywqr" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/mwpqywqr" method="POST" autocomplete="on">
                     <div class="form-row">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name" />
+                        <input type="text" id="name" name="name" required placeholder="Your full name"
+                            autocomplete="name" />
                     </div>
                     <div class="form-row">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                        <input type="email" id="email" name="email" required placeholder="you@example.com"
+                            autocomplete="email" />
                     </div>
                     <div class="form-row">
                         <label for="message">Message</label>
