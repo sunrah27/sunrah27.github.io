@@ -90,6 +90,10 @@ a:focus {
     outline: none;
 }
 
+.mobile-menu {
+    display: none;
+}
+
 .wavy-background {
     position: fixed;
     top: 0;
@@ -993,18 +997,29 @@ button[type="submit"]:hover {
 
 @media (max-width: 600px) {
 
-    /* DISABLE scroll snapping */
-    html,
-    body,
-    .scroll-container {
-        scroll-snap-type: none !important;
-        overflow-y: auto;
-        /* allow normal scrolling */
+    section {
+        padding: 1rem;
     }
 
-    section {
-        scroll-snap-align: none !important;
-        padding: 1rem;
+    .hero-section,
+    .why-section,
+    .work-section,
+    .contact-section {
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    .services-section {
+        height: 150vh;
+        scroll-snap-align: start;
+    }
+
+    .section-title {
+        padding-top: 48px;
+    }
+
+    .section-subtitle {
+        text-align: center;
     }
 
     .services-layout {
@@ -1018,6 +1033,10 @@ button[type="submit"]:hover {
     .service-card {
         max-width: 350px;
         padding: 1rem;
+    }
+
+    .work-text {
+        padding: 1.5rem;
     }
 
     .work-image {
