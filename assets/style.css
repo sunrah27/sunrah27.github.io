@@ -994,7 +994,6 @@ button[type="submit"]:hover {
     }
 }
 
-
 @media (max-width: 600px) {
 
     section {
@@ -1042,19 +1041,4 @@ button[type="submit"]:hover {
     .work-image {
         display: none;
     }
-}
-
-/* Mobile large */
-@media (max-width: 480px) {
-    /* Adjust typography, navigation, form inputs */
-}
-
-/* Mobile standard */
-@media (max-width: 375px) {
-    /* Tighten layout, smaller font sizes, button sizes */
-}
-
-/* Mobile small */
-@media (max-width: 320px) {
-    /* Optimize for very small screens */
 }
