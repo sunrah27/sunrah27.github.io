@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --bg: #f9f9f9;
+    --primary-text: #222;
+    --secondary-text: #555;
+    --card-bg: #ffffff;
+    --shadow-light: rgba(255 255 255 / 0.8);
+    --shadow-dark: rgba(0 0 0 / 0.12);
+    --accent: #4a90e2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg);
+    color: var(--primary-text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-text);
+}
+
+p,
+a,
+li {
+    color: var(--primary-text);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5em 0;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+li {
+    font-size: 1.1rem;
+    margin-bottom: 0.9rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+.wavy-background {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 2px var(--accent));
+}
+
+.panel {
+    flex-direction: column;
+    height: 100vh;
+    gap: 24px;
+    scroll-snap-align: start;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow:
+        8px 8px 15px var(--shadow-dark),
+        -8px -8px 15px var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/*==================================================
+                NAVIFATION
+=================================================*/
+
+.side-nav {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.side-nav .indicator {
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 2.5rem;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+    top: 0;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* .side-nav ul li {
+    padding-left: 10px;
+} */
+
+.side-nav .nav-link {
+    font-family: 'Playfair Display', serif;
+    display: block;
+    padding: 0.5rem;
+    color: var(--primary-text);
+    font-weight: 600;
+    padding-left: 24px;
+    cursor: pointer;
+}
+
+.side-nav .nav-link:hover,
+.side-nav .nav-link.active {
+    text-decoration: none;
+    color: var(--accent);
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+}
+
+/*==================================================
+                HERO SECTION
+=================================================*/
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*==================================================
+                SERVICES SECTION
+=================================================*/
+
+.services-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-card {
+    max-width: 480px;
+    padding: 3rem 3rem;
+}
+
+/*==================================================
+                    WHY SECTION
+=================================================*/
+
+.why-section {
+    flex-direction: column;
+}
+
+.why-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.why-text {
+    max-width: 500px;
+}
+
+.why-stats {
+    display: grid;
+    max-width: 500px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 4rem 2.5rem;
+    user-select: none;
+}
+
+/*==================================================
+                    WORK SECTION
+=================================================*/
+
+.work-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.work-card {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.work-text {
+    max-width: 500px;
+    padding: 3rem;
+}
+
+.work-text h3,
+.work-text p {
+    user-select: none;
+}
+
+.work-image {
+    overflow: hidden;
+    width: 200px;
+    height: 345px;
+    object-fit: cover;
+}
+
+.work-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    transform: translateY(0);
+    transition: transform 3s ease-in-out;
+}
+
+.scroll-animation {
+    animation: panUpDown 6s ease-in-out infinite alternate;
+    transition: none;
+}
+
+@keyframes panUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+/*==================================================
+                    CONTACT SECTION
+=================================================*/
+
+.contact-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow:
+        8px 8px 15px var(--shadow-dark),
+        -8px -8px 15px var(--shadow-light);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    font-size: 1rem;
+}
+
+.form-row input,
+.form-row textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--bg);
+    box-shadow:
+        inset 6px 6px 10px var(--shadow-dark),
+        inset -6px -6px 10px var(--shadow-light);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-text);
+    transition: box-shadow 0.3s ease;
+    resize: vertical;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: none;
+    box-shadow:
+        inset 4px 4px 6px var(--accent),
+        inset -4px -4px 6px #b0d4ff;
+}
+
+button[type="submit"] {
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow:
+        4px 4px 6px #2c6cc1,
+        -4px -4px 6px #6ba1ff;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #3571bf;
+    box-shadow:
+        inset 4px 4px 8px #2c6cc1,
+        inset -4px -4px 8px #6ba1ff;
+}
+
+#form-status {
+    padding-top: 24px;
+    text-align: center;
+}
+
+/*==================================================
+                CAROUSEL SECTION
+=================================================*/
+
+.carousel {
+    position: relative;
+}
+
+.carousel-item {
+    width: 700px;
+    height: 345px;
+    display: none;
+}
+
+.carousel-item-selected {
+    display: flex;
+}
+
+.carousel-nav {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.carousel-button {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: var(--shadow-dark);
+    /* border-radius: 50%; */
+    margin: 0 15px;
+    cursor: pointer;
+    box-shadow:
+        8px 8px 15px var(--shadow-dark),
+        -8px -8px 15px var(--shadow-light);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    background: var(--secondary-text);
+}
+
+.carousel-button-selected {
+    background-color: var(--accent);
+}
+
+/* @media (max-width: 600px) {
+    .wavy-background {
+        display: none;
+    }
+} */
